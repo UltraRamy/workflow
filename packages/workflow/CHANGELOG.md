@@ -1,5 +1,29 @@
 # workflow
 
+## 5.0.0-beta.37
+
+### Major Changes
+
+- [#3061](https://github.com/vercel/workflow/pull/3061) [`62d570e`](https://github.com/vercel/workflow/commit/62d570ed4bf38db333ae9fe9ba513c0d6a9d6b91) Thanks [@NathanColosimo](https://github.com/NathanColosimo)! - Remove the retired step route runtime and make queue health checks target the combined flow handler.
+
+- [#3045](https://github.com/vercel/workflow/pull/3045) [`d813fb8`](https://github.com/vercel/workflow/commit/d813fb8ee835c378db4428e1a9a7edb64cb0b494) Thanks [@NathanColosimo](https://github.com/NathanColosimo)! - Deterministic sandbox hardening: `crypto.subtle.digest` in workflow functions now computes synchronously via `node:crypto` (byte-identical values, deterministic timing under replay); `Atomics.waitAsync`, async `WebAssembly` compilation, `WeakRef`, and `FinalizationRegistry` are no longer exposed (wall-clock timing and GC observation cannot be replayed).
+
+### Patch Changes
+
+- Updated dependencies [[`8c12358`](https://github.com/vercel/workflow/commit/8c12358075897ef1fdcc4ce3847579df63c8ca7a), [`8a95d36`](https://github.com/vercel/workflow/commit/8a95d36c9a166351829f3c6382cddb68335b54d2), [`e8bc7d6`](https://github.com/vercel/workflow/commit/e8bc7d6aadcdb5f89de1be71cfcafe5e9085ed25), [`7a65030`](https://github.com/vercel/workflow/commit/7a6503048acb72bd53e71197339de5cba312f834), [`0b1ca15`](https://github.com/vercel/workflow/commit/0b1ca15dec3a4f56c32d33c5cf5add3ea208c54c), [`b4ba79e`](https://github.com/vercel/workflow/commit/b4ba79ebc501248408474efdd6e353f1753d83e3), [`4ba223a`](https://github.com/vercel/workflow/commit/4ba223a01c56126aec5c982d3583f779ed96e8ca), [`a86035f`](https://github.com/vercel/workflow/commit/a86035f71f60e22170cae231cc6fb07e39928cc6), [`f11e9fe`](https://github.com/vercel/workflow/commit/f11e9fe56f49f3477a2aee15dabc7774928b1428), [`fd05393`](https://github.com/vercel/workflow/commit/fd05393d2b47d1a2f347538dd3b6062d808548d2), [`fc81f45`](https://github.com/vercel/workflow/commit/fc81f4502fa6d8d9a7a5c48b44394dc39c141a86), [`3069b49`](https://github.com/vercel/workflow/commit/3069b4918edb82f12a45d2014dc465aee03e9c39), [`d7553c4`](https://github.com/vercel/workflow/commit/d7553c4517b98c0eef37e5701fdfd316a7d5c008), [`4ada27d`](https://github.com/vercel/workflow/commit/4ada27d35af197d66196288919581d839f87c9a3), [`62d570e`](https://github.com/vercel/workflow/commit/62d570ed4bf38db333ae9fe9ba513c0d6a9d6b91), [`62d570e`](https://github.com/vercel/workflow/commit/62d570ed4bf38db333ae9fe9ba513c0d6a9d6b91), [`d813fb8`](https://github.com/vercel/workflow/commit/d813fb8ee835c378db4428e1a9a7edb64cb0b494), [`b610c46`](https://github.com/vercel/workflow/commit/b610c46f8143afe3c862fb9957f5b4b48e754b42)]:
+  - @workflow/core@5.0.0-beta.37
+  - @workflow/cli@5.0.0-beta.37
+  - @workflow/next@5.0.0-beta.37
+  - @workflow/nitro@5.0.0-beta.37
+  - @workflow/utils@5.0.0-beta.7
+  - @workflow/errors@5.0.0-beta.13
+  - @workflow/typescript-plugin@5.0.0-beta.5
+  - @workflow/astro@5.0.0-beta.37
+  - @workflow/nest@5.0.0-beta.37
+  - @workflow/nuxt@5.0.0-beta.37
+  - @workflow/rollup@5.0.0-beta.37
+  - @workflow/sveltekit@5.0.0-beta.37
+
 ## 5.0.0-beta.36
 
 ### Minor Changes

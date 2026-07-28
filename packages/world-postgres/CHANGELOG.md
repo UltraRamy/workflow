@@ -1,5 +1,25 @@
 # @workflow/world-postgres
 
+## 5.0.0-beta.29
+
+### Major Changes
+
+- [#3061](https://github.com/vercel/workflow/pull/3061) [`62d570e`](https://github.com/vercel/workflow/commit/62d570ed4bf38db333ae9fe9ba513c0d6a9d6b91) Thanks [@NathanColosimo](https://github.com/NathanColosimo)! - Remove legacy step queue topics and payloads now that queued steps use the workflow topic and combined flow handler.
+
+### Minor Changes
+
+- [#3095](https://github.com/vercel/workflow/pull/3095) [`b4ba79e`](https://github.com/vercel/workflow/commit/b4ba79ebc501248408474efdd6e353f1753d83e3) Thanks [@TooTallNate](https://github.com/TooTallNate)! - Add an `encryption_public_key` column to `workflow_runs` (migration `0016`) to store each run's X25519 public key.
+
+### Patch Changes
+
+- [#3064](https://github.com/vercel/workflow/pull/3064) [`cdb3db4`](https://github.com/vercel/workflow/commit/cdb3db4049e96d7e7f3746302f618de62aa69f91) Thanks [@joeyhotz](https://github.com/joeyhotz)! - On shutdown, abort stalled workflow and step HTTP deliveries after Graphile Worker's grace period so their Postgres job rows are unlocked through normal failure handling instead of waiting for stale-lock recovery; aborted deliveries still consume an attempt and retry only when budget remains. Add opt-in application-managed shutdown through `applicationManagedShutdown` or `WORKFLOW_POSTGRES_APPLICATION_MANAGED_SHUTDOWN=1` so applications can await `world.close()` before closing their HTTP server and caller-owned pool.
+
+- Updated dependencies [[`8c12358`](https://github.com/vercel/workflow/commit/8c12358075897ef1fdcc4ce3847579df63c8ca7a), [`b4ba79e`](https://github.com/vercel/workflow/commit/b4ba79ebc501248408474efdd6e353f1753d83e3), [`a86035f`](https://github.com/vercel/workflow/commit/a86035f71f60e22170cae231cc6fb07e39928cc6), [`fc81f45`](https://github.com/vercel/workflow/commit/fc81f4502fa6d8d9a7a5c48b44394dc39c141a86), [`4ada27d`](https://github.com/vercel/workflow/commit/4ada27d35af197d66196288919581d839f87c9a3), [`62d570e`](https://github.com/vercel/workflow/commit/62d570ed4bf38db333ae9fe9ba513c0d6a9d6b91), [`62d570e`](https://github.com/vercel/workflow/commit/62d570ed4bf38db333ae9fe9ba513c0d6a9d6b91), [`62d570e`](https://github.com/vercel/workflow/commit/62d570ed4bf38db333ae9fe9ba513c0d6a9d6b91)]:
+  - @workflow/world@5.0.0-beta.23
+  - @workflow/world-local@5.0.0-beta.31
+  - @workflow/utils@5.0.0-beta.7
+  - @workflow/errors@5.0.0-beta.13
+
 ## 5.0.0-beta.28
 
 ### Minor Changes
